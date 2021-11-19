@@ -1,0 +1,46 @@
+table {
+  text-align: center;
+  width: 500px;
+  height: 200px;
+  margin-top: 10px;
+}
+td {
+  border-radius: 10px; 
+}
+#slideButton{
+  position: relative;
+  margin: 150px 0 0 550px;
+  color: rgb(201, 201, 201);
+  background-color: black;
+  border-radius: 10px;
+  height: 40px;
+  width: 150px;
+  font-size: 15pt;
+  font-weight: bolder;
+}
+.circle {
+  border-radius:80px;
+  text-align:center;
+  font-size:12px;
+  vertical-align:middle;
+}
+#pCircle{
+  background-color:#b4f191;
+  font-weight: bolder;
+}
+#imCircle{  
+  background-color:#ff6464;
+  font-weight: bolder;
+}
+#screen{
+  display: table-cell;
+  vertical-align: middle; /* 세로 정렬 */
+  background-color: black;
+  width: 500px;
+  height:80px;
+  text-align: center;
+  color: rgb(201, 201, 201);
+  font-weight: bolder;
+  font-size: 50px;
+  letter-spacing: 5px;
+}

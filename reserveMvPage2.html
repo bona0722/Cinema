@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="reserveMvP2Style.css">
+  <title>영화 예매</title>
+</head>
+
+<body>
+  <script>
+    var ls = window.localStorage; // 로컬 스토리지
+    var ss = window.sessonStorage; // 로컬 스토리지
+    var mvName = new URLSearchParams(location.search).get("arg1");
+    var rating = new URLSearchParams(location.search).get("arg2");
+    var theater = new URLSearchParams(location.search).get("arg3");
+    var mvTime = new URLSearchParams(location.search).get("arg4");
+
+    function infoMovie() {}
+
+
+
+    function prvPage(data) {
+      args = "arg1=" + mvName + "&arg2=" + rating + "&arg3=" + theater + "&arg4=" + mvTime;
+      window.location.href = "reserveMvPage2.html?" + args;
+    }
+  </script>
+  <form>
+    <div class="black_box">HEART CINEMA</div>
+    <fieldset>
+      <legend>영화관 정보</legend>
+      <hr>
+      <table>
+        <tbody>
+          <tr>영화관명<td></td>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+  </form>
+  <form>
+    <br>
+    <button type="button" onclick="prvPage();" id="slideButton" width="420px" style="cursor: pointer;">
+      이전 단계
+    </button>
+    <button type="button" onclick="window.close();" id="closeButton" width="420px" style="cursor: pointer;">
+      완료
+    </button>
+  </form>
+</body>
+
+</html>

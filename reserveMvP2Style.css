@@ -1,0 +1,11 @@
+.black_box{
+  display: table-cell;
+  vertical-align: middle; /* 세로 정렬 */
+  background-color: black;
+  width: 1000px;
+  height: 50px;
+  color: antiquewhite;
+}
+fieldset{
+  width: 500px;
+}

@@ -10,8 +10,35 @@ body {
 h1 {
   margin: 2em 0 1.5em 0;
 }
+
 #title{
   margin: 100px;
+}
+/*예메테이블*/
+table{
+  padding: 100px;
+  width:900px;
+  height:400px;
+  text-align: center;
+}
+thead{
+  background-color: rgb(59, 59, 59);
+  color: antiquewhite;
+  height: 40px;
+  font-size: 16px;
+}
+td{
+  background-color: rgb(247, 243, 236);
+  font-weight: bolder;
+  font-size: 14px;
+
+}
+#tbl > tr > td > span {
+  font-weight: bolder;
+  border-radius: 5px;
+  padding: 1px 5px 1px 5px;
+  background-color: rgb(94, 90, 85);
+  color: antiquewhite;
 }
 /*메뉴바*/
 nav {
@@ -50,7 +77,7 @@ ul, li {
 #sub_menu {
   position: absolute;
   font-weight: bolder;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   background: black;
   opacity: 0;
   visibility: hidden;
@@ -71,61 +98,4 @@ ul, li {
 #sub_menu>li>a:hover {
   background-color: rgb(66, 66, 66);
   color: antiquewhite;
-}
-.black_box{
-  display: flex;
-  justify-content: center;
-  background-color: black;
-  margin: 20px;
-  width: 100%;
-}
-/* 슬라이드 */
-#slide {
-  position: relative;
-  overflow: hidden;
-  width: 500px;
-  height: 650px;
-  margin: 100px;
-}
-#slide .cnt>li {
-  position: absolute;
-  top: 0;
-  left: 500px;
-  width: 500px;
-  height: 650px;
-  text-align: center;
-  font-size: 30px;
-  line-height: 650px;
-  color: #fff;
-}
-#slide .cnt>li>img {
-  width: 500px;
-  height: 650px;
-}
-#slide .indi {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-#slide .indi:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-#slide .indi>li {
-  float: left;
-  margin-left: 5px;
-  border-radius: 50%;
-  width: 12px;
-  height: 12px;
-  cursor: pointer;
-  opacity: 0.5;
-  background-color: #fff;
-}
-#slide .indi>li.on {
-  opacity: 1;
-}
-#slide .indi>li:first-child {
-  margin-left: 0;
 }

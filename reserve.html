@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="reserveStyle.css">
+  <title>Heart Cinema</title>
+</head>
+
+<body>
+  <a href="main.html"><img id="title" src="media/text-1636881418747.jpg"></a>
+  <nav role="navigation">
+    <ul id="main_menu">
+      <li><a href="main.html">홈</a></li>
+      <li><a href="introduce.html">극장 소개</a>
+      </li>
+      <li><a href="#">영화 정보</a>
+        <ul id="sub_menu">
+          <li><a href="#" aria-label="subemnu">현재 상영작</a></li>
+          <li><a href="#" aria-label="subemnu">예정 상영작</a></li>
+        </ul>
+      </li>
+      <li><a href="#">예매</a>
+        <ul id="sub_menu">
+          <li><a href="reserve.html" aria-label="subemnu">예매</a></li>
+          <li><a href="#" aria-label="subemnu">예매 확인/취소</a></li>
+        </ul>
+      </li>
+      <li><a href="#">기타</a>
+        <ul id="sub_menu">
+          <li><a href="#" aria-label="subemnu">연락처</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <hr class="black_box">
+  <table class="ticketing">
+    <thead>
+      <tr>
+        <th>영화명</th>
+        <th>등급</th>
+        <th>상영관</th>
+        <th>상영시간</th>
+      </tr>
+    </thead>
+    <tbody id="tbl">
+      <tr>
+        <td>듄</td>
+        <td>12</td>
+        <td>1관</td>
+        <td><span type="button" id="arg1" onclick="showPopup('듄', '12', '1관', '10:30')"
+            style="cursor: pointer;">10:30</span></td>
+      </tr>
+      <tr>
+        <td>이터널스</td>
+        <td>12</td>
+        <td>1관</td>
+        <td><span id="arg2" onclick="showPopup('이터널스', '12', '1관', '13:30')" style="cursor: pointer;">13:30</span></td>
+      </tr>
+      <tr>
+        <td>베놈</td>
+        <td>15</td>
+        <td>1관</td>
+        <td><span onclick="showPopup('베놈', '15', '1관', '16:30')" id="arg3" style="cursor: pointer;">16:30</span></td>
+      </tr>
+      <tr>
+        <td>강릉</td>
+        <td>청소년 관람불가</td>
+        <td>1관</td>
+        <td><span onclick="showPopup('강릉', '청소년 관람불가', '1관', '19:00')" id="arg4" style="cursor: pointer;">19:00</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+    function showPopup(arg1, arg2, arg3, arg4) {
+      /*pop up*/
+      var url = 'reserveMvPage.html?arg1='+arg1+'&arg2='+arg2+'&arg3='+arg3+'&arg4='+arg4;
+      window.open(url,'popupView','height=600 width=1000 top= 300 left= 200');
+    }
+  </script>
+</body>
+
+</html>
