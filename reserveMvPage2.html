@@ -8,23 +8,6 @@
 </head>
 
 <body>
-  <script>
-    var ls = window.localStorage; // 로컬 스토리지
-    var ss = window.sessonStorage; // 로컬 스토리지
-    var mvName = new URLSearchParams(location.search).get("arg1");
-    var rating = new URLSearchParams(location.search).get("arg2");
-    var theater = new URLSearchParams(location.search).get("arg3");
-    var mvTime = new URLSearchParams(location.search).get("arg4");
-
-    function infoMovie() {}
-
-
-
-    function prvPage(data) {
-      args = "arg1=" + mvName + "&arg2=" + rating + "&arg3=" + theater + "&arg4=" + mvTime;
-      window.location.href = "reserveMvPage2.html?" + args;
-    }
-  </script>
   <form>
     <div class="black_box">HEART CINEMA</div>
     <fieldset>
@@ -32,7 +15,41 @@
       <hr>
       <table>
         <tbody>
-          <tr>영화관명<td></td>
+          <tr>
+            <td>영화관명</td>
+            <td>Heart Cinema</td>
+          </tr>
+          <tr>
+            <td>연락처</td>
+            <td>010-0000-0000</td>
+          </tr>
+          <tr>
+            <td>좌석수</td>
+            <td>15</td>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+    <fieldset>
+      <legend>영화 정보</legend>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>영화명</td>
+            <td id="mvName"></td>
+          </tr>
+          <tr>
+            <td>등급</td>
+            <td id="rating"></td>
+          </tr>
+          <tr>
+            <td>상영관</td>
+            <td id="theater"></td>
+          </tr>
+          <tr>
+            <td>상영시간</td>
+            <td id="mvTime"></td>
           </tr>
         </tbody>
       </table>
@@ -47,6 +64,31 @@
       완료
     </button>
   </form>
+  <script>
+    var ls = window.localStorage; // 로컬 스토리지
+    var ss = window.sessonStorage; // 로컬 스토리지
+    var mvName = new URLSearchParams(location.search).get("arg1");
+    var rating = new URLSearchParams(location.search).get("arg2");
+    var theater = new URLSearchParams(location.search).get("arg3");
+    var mvTime = new URLSearchParams(location.search).get("arg4");
+    var tblMvName = document.getElementById("mvName");
+    var tblRating = document.getElementById("rating");
+    var tblTheater = document.getElementById("theater");
+    var tblMvTime = document.getElementById("mvTime");
+
+    infoMovie();
+
+    function infoMovie() {
+      tblMvName.innerHTML = mvName;
+      tblRating.innerHTML = rating;
+      tblTheater.innerHTML = theater;
+      tblMvTime.innerHTML = mvTime;
+    }
+    function prvPage(data) {
+      args = "arg1=" + mvName + "&arg2=" + rating + "&arg3=" + theater + "&arg4=" + mvTime;
+      window.location.href = "reserveMvPage.html?" + args;
+    }
+  </script>
 </body>
 
 </html>
