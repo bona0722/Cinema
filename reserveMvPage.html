@@ -7,11 +7,11 @@
   <title>영화 예매</title>
 </head>
 
-
 <body>
-  <div id="screen">SCREEN</div>
+  <div class="black_box" id="mvName"></div>
+  <br>
+  <div id="screen"><img src="media/screen.JPG"></div>
   <span class="circle" id="pCircle">가능 좌석</span>
-  <span class="circle" id="imCircle">불가능 좌석</span>
   <table border="1">
     <tr>
       <td type="button" id="1-1" onclick="check_sheet(id);" style="cursor: pointer;"></td>
@@ -28,28 +28,39 @@
       <td id="2-5" type="button" onclick="check_sheet(id);" style="cursor: pointer;"></td>
     </tr>
     <tr>
-      <td id="2-1" type="button" onclick="check_sheet(id);" style="cursor: pointer;"></td>
-      <td id="2-2" type="button" onclick="check_sheet(id);" style="cursor: pointer;"></td>
-      <td id="2-3" type="button" onclick="check_sheet(id);" style="cursor: pointer;"></td>
-      <td id="2-4" type="button" onclick="check_sheet(id);" style="cursor: pointer;"></td>
-      <td id="2-5" type="button" onclick="check_sheet(id);" style="cursor: pointer;"></td>
+      <td id="3-1" type="button" onclick="check_sheet(id);" style="cursor: pointer;"></td>
+      <td id="3-2" type="button" onclick="check_sheet(id);" style="cursor: pointer;"></td>
+      <td id="3-3" type="button" onclick="check_sheet(id);" style="cursor: pointer;"></td>
+      <td id="3-4" type="button" onclick="check_sheet(id);" style="cursor: pointer;"></td>
+      <td id="3-5" type="button" onclick="check_sheet(id);" style="cursor: pointer;"></td>
     </tr>
   </table>
-  <form>
-    <br>
-    <button type="button" onclick="slidePage();" id="slideButton" width="420px" style="cursor: pointer;">
-      다음 단계
-    </button>
-  </form>
+  <div id="movieInfo"><img id="mvPoster" onclick="mvPoster();"></div>
+  <br>
+  <button type="button" onclick="slidePage();" id="slideButton" width="420px" style="cursor: pointer;">
+    다음 단계
+  </button>
   <script>
     var mvName = new URLSearchParams(location.search).get("arg1");
     var rating = new URLSearchParams(location.search).get("arg2");
     var theater = new URLSearchParams(location.search).get("arg3");
     var mvTime = new URLSearchParams(location.search).get("arg4");
+    var tblMvName = document.getElementById("mvName");
+    //var tblRating = document.getElementById("rating");
+    //var tblTheater = document.getElementById("theater");
+    //var tblMvTime = document.getElementById("mvTime");
+
     var ss = window.sessionStorage; //세션 스토리지
+    var ls = window.localStorage; //세션 스토리지
 
     pageload();
 
+    tblMvName.innerHTML = "&nbsp;&nbsp;영화명 | " + mvName;
+    //tblRating.innerHTML = rating;
+    //tblTheater.innerHTML = theater;
+    //tblMvTime.innerHTML = mvTime;
+
+    //session storage
     if (!ss) {
       alert("세션 스토리지를 지원하지 않습니다.");
     }
@@ -58,17 +69,18 @@
       ss.clear();
     }
 
-    function addItem(id) { // 로컬 스토리지에 저장
-      ss.setItem(id, "추가된 좌석");
+    function addItem(id) {
+      ss.setItem("sheet", id);
     }
 
-    function deleteItem(id) { // 로컬 스토리지에서 삭제
+    function deleteItem(id) {
       ss.removeItem(id);
     }
     var count = 0;
     var tblData = null;
     var sheetId = null;
 
+    //insert color in table
     function check_sheet(data) {
       sheetId = document.getElementById(data).getAttribute("id");
       tblData = document.getElementById(data);
@@ -81,8 +93,14 @@
         count += 1;
         deleteItem(sheetId);
       }
+      
     }
-
+    function mvPoster(){
+      var src1 = document.src("media/Dune_now.jpg");
+      var imageSrc = document.getElementById("mvPoster");
+      imageSrc.innerHTML = src1;
+    }
+    //next page
     function slidePage() {
       args = "arg1=" + mvName + "&arg2=" + rating + "&arg3=" + theater + "&arg4=" + mvTime;
       window.location.href = "reserveMvPage2.html?" + args;

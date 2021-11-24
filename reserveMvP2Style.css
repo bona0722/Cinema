@@ -1,11 +1,72 @@
-.black_box{
+.black_box {
   display: table-cell;
-  vertical-align: middle; /* 세로 정렬 */
+  vertical-align: middle;
+  /* 세로 정렬 */
   background-color: black;
   width: 1000px;
   height: 50px;
-  color: antiquewhite;
+  color: rgb(201, 201, 201);
+  font-weight: bolder;
+  text-align: center;
 }
-fieldset{
-  width: 500px;
+fieldset {
+  width: 450px;
+  border: none;
+  margin: 10px 0 0 0;
+}
+legend {
+  background-color: rgb(59, 59, 59);
+  color: antiquewhite;
+  height: 40px;
+  width: 450px;
+  font-weight: bolder;
+  line-height: 40px;
+  text-align: center;
+}
+tr>td {
+  height: 30px;
+}
+#info tr>td:nth-child(1) {
+  text-align: center;
+  background-color: rgb(173, 173, 173);
+  font-weight: bolder;
+  width: 150px;
+}
+#info tr>td:nth-child(2) {
+  background-color: rgb(231, 231, 231);
+  font-weight: bolder;
+  width: 350px;
+  text-align: center;
+}
+#time tr>td:nth-child(1) {
+  background-color: rgb(173, 173, 173);
+  width: 50px;
+  text-align: right;
+  font-weight: bolder;
+}
+#time tr>td:nth-child(2) {
+  background-color: rgb(231, 231, 231);
+  width: 250px;
+}
+button {
+  display: table-cell;
+  float: right;
+  vertical-align: middle;
+  /* 세로 정렬 */
+  color: rgb(201, 201, 201);
+  background-color: black;
+  border-radius: 10px;
+  height: 40px;
+  width: 150px;
+  font-size: 15pt;
+  font-weight: bolder;
+  margin: 0 10px 0 0px;
+}
+.right {
+  position: relative;
+  left: 510px;
+  bottom: 410px;
+}
+#phone input{
+  width: 50px;
 }

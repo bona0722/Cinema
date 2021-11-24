@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="introduce.css">
+  <link rel="stylesheet" href="reserveStyle.css">
   <title>Heart Cinema</title>
 </head>
 
@@ -34,14 +34,20 @@
     </ul>
   </nav>
   <fieldset>
-    <legend>극장 소개</legend>
+    <legend>예매 확인/취소</legend>
   </fieldset>
 
-  <img src="media/noun_Movie_4391015.jpg" width="200" height="150">
-  <p id="title">" 심장을 뛰게 만들 현대적인 영화관 "</p>
-  <p id="intro">하트 시네마는 바쁜 현대 사회 속에서 문화 콘텐츠와 하트 시네마만의 서비스를 통해 이 영화관 내에서 다시 한 번 심장이 정열적으로 뛰어보자는 바람을 통해 만들어진 시네마입니다.</p>
-  <script>
 
+  <script>
+    var ls = window.localStorage;
+
+    if (!ls) {
+      alert("로컬 스토리지를 지원하지 않습니다.");
+    }
+
+    function deleteItemLs() {
+      ls.removeItem();
+    }
   </script>
 </body>
 

@@ -16,24 +16,26 @@
       </li>
       <li><a href="#">영화 정보</a>
         <ul id="sub_menu">
-          <li><a href="#" aria-label="subemnu">현재 상영작</a></li>
-          <li><a href="#" aria-label="subemnu">예정 상영작</a></li>
+          <li><a href="currentMovie.html" aria-label="subemnu">현재 상영작</a></li>
+          <li><a href="futureMovie.html" aria-label="subemnu">예정 상영작</a></li>
         </ul>
       </li>
       <li><a href="#">예매</a>
         <ul id="sub_menu">
           <li><a href="reserve.html" aria-label="subemnu">예매</a></li>
-          <li><a href="#" aria-label="subemnu">예매 확인/취소</a></li>
+          <li><a href="changeT.html" aria-label="subemnu">예매 확인/취소</a></li>
         </ul>
       </li>
       <li><a href="#">기타</a>
         <ul id="sub_menu">
-          <li><a href="#" aria-label="subemnu">연락처</a></li>
+          <li><a href="contact.html" aria-label="subemnu">연락처</a></li>
         </ul>
       </li>
     </ul>
   </nav>
-  <hr class="black_box">
+  <fieldset>
+    <legend>예매</legend>
+  </fieldset>
   <table class="ticketing">
     <thead>
       <tr>
@@ -75,8 +77,8 @@
   <script>
     function showPopup(arg1, arg2, arg3, arg4) {
       /*pop up*/
-      var url = 'reserveMvPage.html?arg1='+arg1+'&arg2='+arg2+'&arg3='+arg3+'&arg4='+arg4;
-      window.open(url,'popupView','height=600 width=1000 top= 300 left= 200');
+      var url = 'reserveMvPage.html?arg1=' + arg1 + '&arg2=' + arg2 + '&arg3=' + arg3 + '&arg4=' + arg4;
+      window.open(url, 'popupView', 'height=800 width=1200 top= 300 left= 200');
     }
   </script>
 </body>

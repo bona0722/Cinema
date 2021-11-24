@@ -17,19 +17,19 @@
       </li>
       <li><a href="#">영화 정보</a>
         <ul id="sub_menu">
-          <li><a href="#" aria-label="subemnu">현재 상영작</a></li>
-          <li><a href="#" aria-label="subemnu">예정 상영작</a></li>
+          <li><a href="currentMovie.html" aria-label="subemnu">현재 상영작</a></li>
+          <li><a href="futureMovie.html" aria-label="subemnu">예정 상영작</a></li>
         </ul>
       </li>
       <li><a href="#">예매</a>
         <ul id="sub_menu">
           <li><a href="reserve.html" aria-label="subemnu">예매</a></li>
-          <li><a href="#" aria-label="subemnu">예매 확인/취소</a></li>
+          <li><a href="changeT.html" aria-label="subemnu">예매 확인/취소</a></li>
         </ul>
       </li>
       <li><a href="#">기타</a>
         <ul id="sub_menu">
-          <li><a href="#" aria-label="subemnu">연락처</a></li>
+          <li><a href="contact.html" aria-label="subemnu">연락처</a></li>
         </ul>
       </li>
     </ul>
@@ -53,21 +53,19 @@
     </div>
   </div>
   <script>
-    var MOVEING_PX = 4,
-      AUTO_TIME = 2000,
-      slide = document.getElementById("slide"),
-      indi = document.createElement("ul"),
-      slideCnt = slide.getElementsByClassName("cnt"),
-      slideCntItem = slideCnt[0].getElementsByTagName("li"),
-      prevBtn = slide.getElementsByClassName("prev"),
-      nextBtn = slide.getElementsByClassName("next"),
-      playBtn = slide.getElementsByClassName("play"),
-      stopBtn = slide.getElementsByClassName("stop"),
-      playSet = null,
-      before = 0,
-      after = 0,
-      moveIng = false;
-    // init
+    var MOVEING_PX = 4;
+    var  AUTO_TIME = 2000;
+    var  slide = document.getElementById("slide");
+    var  indi = document.createElement("ul");
+    var  slideCnt = slide.getElementsByClassName("cnt");
+    var  slideCntItem = slideCnt[0].getElementsByTagName("li");
+    var  playBtn = slide.getElementsByClassName("play");
+    var  stopBtn = slide.getElementsByClassName("stop");
+    var  playSet = null;
+    var  before = 0;
+    var  after = 0;
+    var  moveIng = false;
+
     slideCntItem[0].style.left = 0;
     playBtn[0].style.display = "block";
     var indi = document.createElement("ul");
@@ -80,7 +78,6 @@
     for (var j = 0; j < indi.children.length; j++) {
       indiClick(j);
     }
-    // initEvnet
     if (!moveIng) {
       after++;
       if (after >= slideCntItem.length) {
